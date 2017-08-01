@@ -20,7 +20,6 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:stretchColumns="*">
-
         <TableRow>
 
             <TextView
@@ -31,13 +30,15 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextConplex"
-                android:layout_width="0dp"
+                android:id="@+id/editTextComplex"
                 android:layout_height="wrap_content"
+                android:layout_width="0dp"
                 android:layout_weight="2"
                 android:ems="10"
-                android:focusable="true"/>
-
+                android:focusable="faldse"
+                android:nextFocusDown="@+id/editTextDong"
+                android:singleLine="true"
+                android:visibility="visible" />
         </TableRow>
 
         <TableRow>
@@ -55,7 +56,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
-                android:focusable="false"/>
+                android:focusable="false"
+                android:nextFocusDown="@+id/editTextHo"
+                android:singleLine="true"/>
 
         </TableRow>
 
@@ -74,7 +77,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
-                android:focusable="false"/>
+                android:focusable="false"
+                android:nextFocusDown="@+id/editTextPhoneMale"
+                android:singleLine="true"/>
 
         </TableRow>
 
@@ -85,7 +90,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="임대 Tel (남)"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <EditText
                 android:id="@+id/editTextPhoneMale"
@@ -94,7 +100,10 @@
                 android:layout_weight="2"
                 android:ems="10"
                 android:focusable="false"
-                android:onClick="phoneMaleClick"/>
+                android:onClick="phoneMaleClick"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/editTextPhoneFemale"
+                android:singleLine="true"/>
 
         </TableRow>
 
@@ -114,7 +123,10 @@
                 android:layout_weight="2"
                 android:ems="10"
                 android:focusable="false"
-                android:onClick="phoneFemaleClick"/>
+                android:onClick="phoneFemaleClick"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/editTextPhone2Male"
+                android:singleLine="true"/>
 
         </TableRow>
 
@@ -134,7 +146,10 @@
                 android:layout_weight="2"
                 android:ems="10"
                 android:focusable="false"
-                android:onClick="phone2MaleClick"/>
+                android:onClick="phone2MaleClick"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/editTextPhone2Female"
+                android:singleLine="true"/>
 
         </TableRow>
 
@@ -154,7 +169,10 @@
                 android:layout_weight="2"
                 android:ems="10"
                 android:focusable="false"
-                android:onClick="phone2FemaleClick"/>
+                android:onClick="phone2FemaleClick"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/editTextPrice"
+                android:singleLine="true"/>
 
         </TableRow>
 
@@ -175,7 +193,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
-                android:focusable="false"/>
+                android:focusable="false"
+                android:nextFocusDown="@+id/editTextRmks"
+                android:singleLine="true"/>
 
         </TableRow>
 

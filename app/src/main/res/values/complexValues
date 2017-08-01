@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="complexItems">
+        <item>포스홈타운</item>
+        <item>동아솔레시티</item>
+        <item>자이2차</item>
+        <item>상록데시앙</item>
+        <item>한화 꿈에그린</item>
+        <item>기타</item>
+    </string-array>
+
+</resources>

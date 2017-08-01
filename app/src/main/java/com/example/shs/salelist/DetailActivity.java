@@ -23,7 +23,7 @@ import java.util.Objects;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private EditText editTextConplex;
+    private EditText editTextComplex;
     private EditText editTextDong;
     private EditText editTextHo;
     private EditText editTextPhoneMale;
@@ -46,11 +46,9 @@ public class DetailActivity extends AppCompatActivity {
         setTitle("상세 보기");
 
         Intent intent = new Intent(this.getIntent());
-
         saleItem = (SaleItem) intent.getSerializableExtra("saleItem");
 
-
-        editTextConplex = (EditText) findViewById(R.id.editTextConplex);
+        editTextComplex = (EditText) findViewById(R.id.editTextComplex);
         editTextDong = (EditText) findViewById(R.id.editTextDong);
         editTextHo= (EditText) findViewById(R.id.editTextHo);
         editTextPhoneMale= (EditText) findViewById(R.id.editTextPhoneMale);
@@ -62,9 +60,7 @@ public class DetailActivity extends AppCompatActivity {
 
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
 
-        Log.d("logcat",saleItem.getComplex());
-
-        editTextConplex.setText(saleItem.getComplex());
+        editTextComplex.setText(saleItem.getComplex());
         editTextDong.setText(saleItem.getDong());
         editTextHo.setText(saleItem.getHo());
         editTextPhoneMale.setText(saleItem.getPhoneMale());
@@ -82,7 +78,7 @@ public class DetailActivity extends AppCompatActivity {
 
         if(!isClicked){
 
-            editTextConplex.setFocusableInTouchMode(true);
+            editTextComplex.setFocusableInTouchMode(true);
             editTextDong.setFocusableInTouchMode(true);
             editTextHo.setFocusableInTouchMode(true);
             editTextPhoneMale.setFocusableInTouchMode(true);
@@ -92,7 +88,7 @@ public class DetailActivity extends AppCompatActivity {
             editTextPrice.setFocusableInTouchMode(true);
             editTextRmks.setFocusableInTouchMode(true);
 
-            editTextConplex.setFocusable(true);
+            editTextComplex.setFocusable(true);
             editTextDong.setFocusable(true);
             editTextHo.setFocusable(true);
             editTextPhoneMale.setFocusable(true);
@@ -109,7 +105,7 @@ public class DetailActivity extends AppCompatActivity {
 
             databaseReference = FirebaseDatabase.getInstance().getReference();
 
-            String conplex = editTextConplex.getText().toString();
+            String conplex = editTextComplex.getText().toString();
             String dong = editTextDong.getText().toString();
             String ho = editTextHo.getText().toString();
             String phoneMale = editTextPhoneMale.getText().toString();
@@ -127,7 +123,7 @@ public class DetailActivity extends AppCompatActivity {
 
             databaseReference.updateChildren(childUpdates);
 
-            editTextConplex.setFocusable(false);
+            editTextComplex.setFocusable(false);
             editTextDong.setFocusable(false);
             editTextHo.setFocusable(false);
             editTextPhoneMale.setFocusable(false);
@@ -146,32 +142,38 @@ public class DetailActivity extends AppCompatActivity {
     public void phoneMaleClick(View v){
         if(!isClicked) {
             String tel = "tel:" + editTextPhoneMale.getText().toString();
-
-            startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            if(!tel.equals("tel:"))
+            {
+                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            }
         }
     }
 
     public void phoneFemaleClick(View v){
         if(!isClicked) {
             String tel = "tel:" + editTextPhoneFemale.getText().toString();
-
-            startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            if(!tel.equals("tel:"))
+            {
+                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            }
         }
     }
 
     public void phone2MaleClick(View v){
         if(!isClicked) {
             String tel = "tel:" + editTextPhone2Male.getText().toString();
-
-            startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            if (!tel.equals("tel:")) {
+                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            }
         }
     }
 
     public void phone2FemaleClick(View v){
         if(!isClicked) {
             String tel = "tel:" + editTextPhone2Female.getText().toString();
-
-            startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            if (!tel.equals("tel:")) {
+                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+            }
         }
     }
 
