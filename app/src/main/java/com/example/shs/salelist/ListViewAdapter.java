@@ -88,7 +88,7 @@ public class ListViewAdapter extends BaseAdapter implements Filterable{
         else{
             itemChk.setVisibility(View.INVISIBLE);
         }
-        titleTextView.setText(saleItem.getComplex() +"단지 "+ saleItem.getDong()+"동 "+ saleItem.getHo()+"호 ");
+        titleTextView.setText(saleItem.getComplex() + " "+saleItem.getDong()+"동 "+ saleItem.getHo()+"호 ");
         descTextView.setText(saleItem.getPhoneMale() + " & " +saleItem.getPhoneFemale() + "\n" +
                 saleItem.getPhone2Male() + " & " + saleItem.getPhone2Female());
         return convertView;
@@ -135,7 +135,7 @@ public class ListViewAdapter extends BaseAdapter implements Filterable{
                 ArrayList<SaleItem> itemList = new ArrayList<SaleItem>();
 
                 for(SaleItem item : listViewItemList){
-                    String title = item.getComplex() +"단지 "+ item.getDong()+"동 "+ item.getHo()+"호";
+                    String title = item.getComplex() + " "+item.getDong()+"동 "+ item.getHo()+"호";
                     String desc = item.getPhoneMale() + " & " +item.getPhoneFemale() + "\n" +
                             item.getPhone2Male() + " & " + item.getPhone2Female();
                     if(title.toUpperCase().contains(constranit.toString().toUpperCase()) || desc.toUpperCase().contains(constranit.toString().toUpperCase()))

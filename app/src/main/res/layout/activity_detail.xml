@@ -35,7 +35,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:ems="10"
-                android:focusable="faldse"
+                android:focusable="false"
                 android:nextFocusDown="@+id/editTextDong"
                 android:singleLine="true"
                 android:visibility="visible" />
